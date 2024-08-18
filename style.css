@@ -9,8 +9,55 @@ footer {
     background-color: #272727;
 }
 
-.content_area {
+.burger_btn img {
+    height: 48px;
+    width: 48px;
+    text-align: center;
+}
+
+.nav {
+    border: 2px solid #12A76C;
+    max-width: 960px;
+    width: 100%;
+    padding: 16px;
+}
+
+.nav_ul_li {
+    display: flex;
+}
+
+.nav_left {
+    text-align: center;
+    margin-left: 48px;
+}
+
+.nav_mid {
+    text-align: center;
+}
+
+.nav_mid h1{
+    color: white;
+    font-size: 32px;
+}
+
+.nav_right {
+    display: flex;
+    gap: 32px;
+    margin-right: 48px;
+}
+
+.content {
     display: flex;
     flex-direction: row;
     flex-grow: 1;
+}
+
+.content_area {
+    border: 2px solid #12A76C;
+    width: calc(100% - 300px);
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

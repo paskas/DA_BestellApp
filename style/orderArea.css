@@ -1,7 +1,7 @@
 .order_area {
-    background-color: #272727;
     border: 2px solid #12A76C;
-    width: calc(100% - 300px);
+    max-width: 960px;
+    width: 100%;
     padding: 16px;
 }
 

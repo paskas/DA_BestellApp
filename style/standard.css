@@ -5,6 +5,30 @@
     scroll-behavior: smooth;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .d-none {
     display: none;
+}
+
+.link_button {
+    height: 48px;
+    width: 48px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.link_button img{
+    height: 48px;
+    width: 48px;
+}
+
+.button {
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    text-align: center;
 }
