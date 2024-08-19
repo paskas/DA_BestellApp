@@ -1,14 +1,28 @@
+.order_range {
+    background-color: rgb(248, 248, 248);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .order_area {
     max-width: 960px;
-    width: 100%;
     padding: 16px;
     position: relative;
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .order_part {
-    border: 2px solid #12A76C;
+    cursor: pointer;
+    border: 1px solid rgb(160, 160, 160);
     border-radius: 16px;
     width: 100%;
     padding: 16px;
@@ -17,8 +31,26 @@
     align-items: center;
 }
 
-.order_plus{
-    position: absolute;
-    top: 9%;
-    left: 92%;
+.order_part:hover {
+    background-color: rgb(211, 211, 211);
+}
+
+.order_plus {
+    cursor: pointer;
+    width: 32px;
+    ;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.order_plus img {
+    height: 44px;
+}
+
+.order_plus:hover {
+    background-color: #376E6F;
+    border-radius: 50%;
+    transition: 200ms;
 }

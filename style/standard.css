@@ -13,15 +13,9 @@ ul {
     display: none;
 }
 
-.link_button {
-    height: 48px;
-    width: 48px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-}
 
-.link_button img{
+
+.link_button img {
     height: 48px;
     width: 48px;
 }
