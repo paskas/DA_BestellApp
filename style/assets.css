@@ -5,3 +5,9 @@
     text-decoration: none;
     display: inline-block;
 }
+
+.burger_btn img {
+    height: 48px;
+    width: 48px;
+    text-align: center;
+}
