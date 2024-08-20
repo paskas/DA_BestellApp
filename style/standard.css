@@ -5,7 +5,8 @@
     scroll-behavior: smooth;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -13,11 +14,16 @@ ul {
     list-style-type: none;
 }
 
+a {
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
 .d-none {
     display: none;
 }
-
-
 
 .link_button img {
     height: 48px;

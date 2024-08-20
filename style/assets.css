@@ -1,4 +1,4 @@
-.link_button {
+.header_link_button {
     height: 48px;
     width: 48px;
     text-align: center;
@@ -6,8 +6,16 @@
     display: inline-block;
 }
 
-.burger_btn img {
-    height: 48px;
-    width: 48px;
-    text-align: center;
+.nav_link_button a {
+    padding: 8px;
+}
+
+.nav_link_button a:hover {
+    font-weight: bold;
+    transform: scale(1.06);
+    transition: 200ms;
+}
+
+.footer_left_link_button a:hover {
+    text-decoration: underline;
 }

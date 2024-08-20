@@ -39,6 +39,11 @@ header {
     gap: 32px;
 }
 
+.header_right img{
+    height: 48px;
+    width: 48px;
+}
+
 
 /* ----- titel image ----- */
 .title {
