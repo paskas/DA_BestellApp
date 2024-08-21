@@ -1,139 +1,138 @@
-let orderSelection = [
+let orderDishes = [
     {
-        "category": "Pizza",
+        "category": "Vorspeisen",
+        "image": "./assets/img/Gyoza.jpg",
+        "info": "Eine Auswahl an leckeren Vorspeisen, ideal für den Start Ihres Essens.",
         "items": [
             {
-                "name": "Margherita",
-                "info": "Klassische Pizza mit Tomatensauce, Mozzarella und Basilikum.",
-                "price": 7.99,
-                "image": "https://example.com/images/margherita.jpg"
+                "name": "Edamame",
+                "info": "Gedämpfte grüne Sojabohnen, leicht gesalzen.",
+                "price": 3.50
             },
             {
-                "name": "Salami",
-                "info": "Pizza mit Tomatensauce, Mozzarella und Salami.",
-                "price": 8.99,
-                "image": "https://example.com/images/salami.jpg"
+                "name": "Gyoza",
+                "info": "Frittierte Teigtaschen gefüllt mit Gemüse und Huhn.",
+                "price": 4.90
+            },
+            {
+                "name": "Wakame Salat",
+                "info": "Frischer Algensalat mit Sesam-Dressing.",
+                "price": 4.20
             }
         ]
     },
     {
-        "category": "Pizzabrötchen",
+        "category": "Suppen",
+        "image": "./assets/img/suppe.jpg",
+        "info": "Wärmende Suppen, perfekt für eine wohltuende Mahlzeit.",
         "items": [
             {
-                "name": "Pizzabrötchen Käse",
-                "info": "Kleine Brötchen gefüllt mit Käse und Knoblauch.",
-                "price": 4.99,
-                "image": "https://example.com/images/pizzabroetchen_kaese.jpg"
+                "name": "Miso Suppe",
+                "info": "Traditionelle japanische Suppe mit Tofu, Seetang und Frühlingszwiebeln.",
+                "price": 2.90
+            },
+            {
+                "name": "Tom Yum Suppe",
+                "info": "Scharfe und saure Suppe mit Garnelen und Zitronengras.",
+                "price": 5.50
+            },
+            {
+                "name": "Kürbis-Ingwer Suppe",
+                "info": "Cremige Suppe aus frischem Kürbis und Ingwer.",
+                "price": 4.80
             }
         ]
     },
     {
-        "category": "Fingerfood",
+        "category": "Sushi - Nigiri",
+        "image": "./assets/img/Nigiri.jpg",
+        "info": "Nigiri-Sushi: Handgeformter Reis belegt mit frischem Fisch oder Gemüse.",
         "items": [
             {
-                "name": "Chicken Wings",
-                "info": "Würzige Hähnchenflügel, serviert mit BBQ-Sauce.",
-                "price": 6.99,
-                "image": "https://example.com/images/chicken_wings.jpg"
+                "name": "Lachs Nigiri",
+                "info": "Frischer Lachs auf handgeformtem Reis.",
+                "price": 2.50
+            },
+            {
+                "name": "Thunfisch Nigiri",
+                "info": "Zarter Thunfisch auf Sushi-Reis.",
+                "price": 2.80
+            },
+            {
+                "name": "Ebi Nigiri",
+                "info": "Gekochte Garnele auf Reis.",
+                "price": 2.70
             }
         ]
     },
     {
-        "category": "Pasta",
+        "category": "Sushi - Maki",
+        "image": "./assets/img/Maki.jpg",
+        "info": "Maki-Sushi: Kleine gerollte Sushi mit verschiedenen Füllungen.",
         "items": [
             {
-                "name": "Spaghetti Bolognese",
-                "info": "Spaghetti mit klassischer Bolognese-Sauce.",
-                "price": 9.49,
-                "image": "https://example.com/images/spaghetti_bolognese.jpg"
+                "name": "Kappa Maki",
+                "info": "Gurkenrolle umhüllt mit Nori-Algen.",
+                "price": 3.20
+            },
+            {
+                "name": "Tekka Maki",
+                "info": "Thunfischrolle, umhüllt mit Nori.",
+                "price": 3.80
+            },
+            {
+                "name": "Avocado Maki",
+                "info": "Cremige Avocado, gerollt in Reis und Nori.",
+                "price": 3.50
+            },
+            {
+                "name": "Sake Maki",
+                "info": "Lachsrolle mit frischem Lachs und Nori.",
+                "price": 3.90
             }
         ]
     },
     {
-        "category": "Salate",
+        "category": "Sushi - Sashimi",
+        "image": "./assets/img/sashimi.jpg",
+        "info": "Sashimi: Dünn geschnittener, frischer Fisch, perfekt zum Genießen.",
         "items": [
             {
-                "name": "Caesar Salat",
-                "info": "Frischer Römersalat mit Parmesan, Croutons und Caesar-Dressing.",
-                "price": 7.49,
-                "image": "https://example.com/images/caesar_salat.jpg"
+                "name": "Lachs Sashimi",
+                "info": "Dünn geschnittener frischer Lachs.",
+                "price": 6.50
+            },
+            {
+                "name": "Thunfisch Sashimi",
+                "info": "Zarter Thunfisch, in feine Scheiben geschnitten.",
+                "price": 7.00
+            },
+            {
+                "name": "Jakobsmuschel Sashimi",
+                "info": "Frische Jakobsmuscheln, serviert als Sashimi.",
+                "price": 8.50
             }
         ]
     },
     {
-        "category": "Wraps",
+        "category": "Sushi - Inside-Out",
+        "image": "./assets/img/inside-out.jpg",
+        "info": "Inside-Out Sushi: Rollen, bei denen der Reis außen liegt und die Füllung innen ist.",
         "items": [
             {
-                "name": "Chicken Wrap",
-                "info": "Weizentortilla gefüllt mit Hähnchen, Salat, Tomaten und Joghurt-Dressing.",
-                "price": 6.99,
-                "image": "https://example.com/images/chicken_wrap.jpg"
-            }
-        ]
-    },
-    {
-        "category": "Bowls",
-        "items": [
+                "name": "California Roll",
+                "info": "Krabbenfleisch, Avocado und Gurke, umhüllt mit Sushi-Reis.",
+                "price": 5.50
+            },
             {
-                "name": "Quinoa Bowl",
-                "info": "Gesunde Bowl mit Quinoa, Avocado, Kichererbsen und Sesam-Dressing.",
-                "price": 8.99,
-                "image": "https://example.com/images/quinoa_bowl.jpg"
-            }
-        ]
-    },
-    {
-        "category": "Kids Menü",
-        "items": [
+                "name": "Dragon Roll",
+                "info": "Tempura-Garnele und Avocado, belegt mit dünnen Lachs- und Avocadoscheiben.",
+                "price": 7.90
+            },
             {
-                "name": "Mini Pizza",
-                "info": "Kleine Pizza mit Tomatensauce und Mozzarella.",
-                "price": 4.99,
-                "image": "https://example.com/images/mini_pizza.jpg"
-            }
-        ]
-    },
-    {
-        "category": "Saucen und Dips",
-        "items": [
-            {
-                "name": "Knoblauch-Dip",
-                "info": "Cremiger Knoblauch-Dip.",
-                "price": 1.49,
-                "image": "https://example.com/images/knoblauch_dip.jpg"
-            }
-        ]
-    },
-    {
-        "category": "Desserts",
-        "items": [
-            {
-                "name": "Tiramisu",
-                "info": "Klassisches italienisches Dessert mit Mascarpone und Kaffee.",
-                "price": 4.99,
-                "image": "https://example.com/images/tiramisu.jpg"
-            }
-        ]
-    },
-    {
-        "category": "Alkoholfreie Getränke",
-        "items": [
-            {
-                "name": "Cola",
-                "info": "Erfrischungsgetränk mit Kohlensäure.",
-                "price": 1.99,
-                "image": "https://example.com/images/cola.jpg"
-            }
-        ]
-    },
-    {
-        "category": "Alkoholische Getränke",
-        "items": [
-            {
-                "name": "Bier",
-                "info": "Kühles Bier aus der Region.",
-                "price": 2.99,
-                "image": "https://example.com/images/bier.jpg"
+                "name": "Spicy Tuna Roll",
+                "info": "Würziger Thunfisch mit Gurke, umhüllt von Reis und Sesam.",
+                "price": 6.20
             }
         ]
     }
