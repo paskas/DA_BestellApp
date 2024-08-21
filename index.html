@@ -11,11 +11,9 @@
     <link rel="stylesheet" href="style/assets.css">
     <link rel="stylesheet" href="style/orderArea.css">
     <link rel="stylesheet" href="style/basket.css">
-    <script src="scripts/db.js"></script>
-    <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="init()">
     <header>
         <div class="content_header">
             <div class="header_left"><img src="assets/img/Logo.png" alt="Logo" height="100px"></div>
@@ -78,32 +76,7 @@
             </nav>
             <article class="order">
                 <div class="order_range">
-                    <div class="order_area">
-                        <div id="categoryOrder" class="category_order">
-                            <figure>
-                                <img class="category_img" src="assets/img/sushi-maki.jpg" alt="Kategorie Bild">
-                            </figure>
-                            <div>
-                                <h2>Kategorie</h2>
-                            </div>
-                            <div>
-                                <p>Text,Text,Text,Text,Text</p>
-                            </div>
-                        </div>
-                        <div id="orderPart" class="order_part">
-                            <div>
-                                <div>
-                                    <h2>Titel</h2>
-                                </div>
-                                <div><span>Text</span></div>
-                                <div>
-                                    <h3>Geld</h3>
-                                </div>
-                            </div>
-                            <div class="order_plus">
-                                <img src="assets/icons/icons8-plus-64.png" alt="">
-                            </div>
-                        </div>
+                    <div id="dishesOrders" class="order_area">
                     </div>
                 </div>
             </article>
@@ -131,7 +104,9 @@
             </div>
         </div>
     </footer>
-
+    <script src="scripts/db.js"></script>
+    <script src="script.js"></script>
+    <script src="scripts/template.js"></script>
 </body>
 
 </html>

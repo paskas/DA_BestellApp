@@ -1,5 +1,5 @@
-let orderDishes = [
-    {
+let orderDishes = {
+    "Vorspeisen": {
         "category": "Vorspeisen",
         "image": "./assets/img/Gyoza.jpg",
         "info": "Eine Auswahl an leckeren Vorspeisen, ideal für den Start Ihres Essens.",
@@ -21,7 +21,7 @@ let orderDishes = [
             }
         ]
     },
-    {
+    "Suppen": {
         "category": "Suppen",
         "image": "./assets/img/suppe.jpg",
         "info": "Wärmende Suppen, perfekt für eine wohltuende Mahlzeit.",
@@ -43,7 +43,7 @@ let orderDishes = [
             }
         ]
     },
-    {
+    "Nigiri": {
         "category": "Sushi - Nigiri",
         "image": "./assets/img/Nigiri.jpg",
         "info": "Nigiri-Sushi: Handgeformter Reis belegt mit frischem Fisch oder Gemüse.",
@@ -65,7 +65,7 @@ let orderDishes = [
             }
         ]
     },
-    {
+    "Maki": {
         "category": "Sushi - Maki",
         "image": "./assets/img/Maki.jpg",
         "info": "Maki-Sushi: Kleine gerollte Sushi mit verschiedenen Füllungen.",
@@ -92,7 +92,7 @@ let orderDishes = [
             }
         ]
     },
-    {
+    "Sashimi": {
         "category": "Sushi - Sashimi",
         "image": "./assets/img/sashimi.jpg",
         "info": "Sashimi: Dünn geschnittener, frischer Fisch, perfekt zum Genießen.",
@@ -114,7 +114,7 @@ let orderDishes = [
             }
         ]
     },
-    {
+    "Inside-Out": {
         "category": "Sushi - Inside-Out",
         "image": "./assets/img/inside-out.jpg",
         "info": "Inside-Out Sushi: Rollen, bei denen der Reis außen liegt und die Füllung innen ist.",
@@ -136,4 +136,4 @@ let orderDishes = [
             }
         ]
     }
-]
+}
