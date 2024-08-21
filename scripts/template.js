@@ -1,6 +1,6 @@
 function createCategoryHtml(category) {
     return `
-    <div class="category_order">
+    <div id="category-${category.category}" class="category_order">
         <div class="category_container">
             <figure class="category_image">
                 <img src="${category.image}" alt="${category.category}">
@@ -15,8 +15,7 @@ function createCategoryHtml(category) {
         <div class="items_container">
             ${renderItemsOrders(category.items)}
         </div>
-    </div>
-    `;
+    </div>`;
 }
 
 function createItemHtml(item) {

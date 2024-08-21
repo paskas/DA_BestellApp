@@ -21,4 +21,9 @@ function renderItemsOrders(items) {
     return ordersHtml;
 }
 
-
+function goToCategory(category) {
+    const element = document.getElementById(`category-${category}`);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+}
