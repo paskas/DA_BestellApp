@@ -16,3 +16,81 @@
     align-items: center;
     flex-direction: column;
 }
+
+.basket_title {
+    width: 100%;
+    padding: 24px 24px 0 24px;
+    justify-content: center;
+    display: flex;
+}
+
+.basket_deliver_pickUp_toggle_area {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0 8px 0;
+}
+
+.basket_deliver_pickUp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: rgb(211, 211, 211);
+    border: 4px solid rgb(211, 211, 211);
+    border-radius: 32px;
+}
+
+.deliver, .pickup{
+    width: 100%;
+    height: 3em;
+    border-radius: 32px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.basket_toggle_input {
+    position: absolute;
+    display: block;
+    height: 1px;
+    width: 1px;
+    clip-path: inset(1px);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.basket_toggle_label {
+    cursor: pointer;
+    position: relative;
+    padding: 8px 28px 8px 28px;
+}
+
+.basket_display{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.basket_display img{
+    height:32px
+}
+
+.basket_display_img{
+    display: flex;
+    align-items: center;
+}
+
+.basket_display p{
+    font-size: 12px;
+}
+
+.fill_shopping_cart{
+    text-align: center;
+    padding: 48px;
+}
+
+.fill_shopping_cart img{
+    height: 48px;
+}

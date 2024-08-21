@@ -131,12 +131,6 @@ header {
     background-color: white;
 }
 
-.nav_ul_li button:hover {
-    background-color: gray;
-    border-radius: 16px;
-}
-
-
 /* ----- content ----- */
 .content {
     position: relative;

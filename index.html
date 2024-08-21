@@ -60,16 +60,19 @@
                             <a href="#category-Suppen" onclick="goToCategory('Suppen')">Suppen</a>
                         </li>
                         <li>
-                            <a href="#category-Sushi - Nigiri" onclick="goToCategory('Sushi - Nigiri')">Sushi - Nigiri</a>
+                            <a href="#category-Sushi - Nigiri" onclick="goToCategory('Sushi - Nigiri')">Sushi -
+                                Nigiri</a>
                         </li>
                         <li>
                             <a href="#category-Sushi - Maki" onclick="goToCategory('Sushi - Maki')">Sushi - Maki</a>
                         </li>
-                        <li>
-                            <a href="#category-Sushi - Sashimi" onclick="goToCategory('Sushi - Sashimi')">Sushi - Sashimi</a>
+                        <!-- <li> -->
+                        <a href="#category-Sushi - Sashimi" onclick="goToCategory('Sushi - Sashimi')">Sushi -
+                            Sashimi</a>
                         </li>
                         <li>
-                            <a href="#category-Sushi - Inside-Out" onclick="goToCategory('Sushi - Inside-Out')">Sushi - Inside-Out</a>
+                            <a href="#category-Sushi - Inside-Out" onclick="goToCategory('Sushi - Inside-Out')">Sushi -
+                                Inside-Out</a>
                         </li>
                     </ul>
                 </div>
@@ -83,8 +86,45 @@
         </section>
         <aside id="basketArea" class="basket_area">
             <div class="basket">
-                <div>
+                <div class="basket_title">
                     <h2>Warenkorb</h2>
+                </div>
+                <div class="basket_deliver_pickUp_toggle_area">
+                    <div class="basket_deliver_pickUp">
+                        <div class="deliver background_white">
+                            <input id="option_item_0" class="basket_toggle_input" type="radio" value="delivery">
+                            <label class="basket_toggle_label" for="option_item_0">
+                                <span class="basket_display">
+                                    <div class="basket_display_img"><img src="assets/icons/icons8-bicycle-64.png"
+                                            alt=""></div>
+                                    <div>
+                                        <p>Lieferung</p>
+                                        <p>20-45 Min</p>
+                                    </div>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="pickup">
+                            <input id="option_item_1" class="basket_toggle_input" type="radio" value="delivery">
+                            <label class="basket_toggle_label" for="option_item_1">
+                                <span class="basket_display">
+                                    <div><img src="assets/icons/icons8-essen-abholen-64.png" alt=""></div>
+                                    <div>
+                                        <p>Abholung</p>
+                                        <p>15 Min</p>
+                                    </div>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="basket_item_area">
+                    <div class="basket_info_area"></div>
+                </div>
+                <div class="fill_shopping_cart">
+                    <img src="assets/icons/icons8-shopping-basket-64.png" alt="">
+                    <h2>Fülle deinen Warenkorb</h2>
+                    <p>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</p>
                 </div>
             </div>
         </aside>
