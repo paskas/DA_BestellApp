@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bestell App</title>
+    <link rel="icon" type="favicon" href="./assets/icons/icons8-favicon-sushi-96.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style/fonts.css">
     <link rel="stylesheet" href="style/standard.css">
     <link rel="stylesheet" href="style/assets.css">
     <link rel="stylesheet" href="style/orderArea.css">
     <link rel="stylesheet" href="style/basket.css">
+    <link rel="stylesheet" href="style/dialog.css">
 </head>
 
 <body onload="init()">
@@ -27,6 +29,55 @@
             </div>
         </div>
     </header>
+    <div id="orderDishesDialog" class="order_dishes_dialog d-none">
+        <div class="dialog_container ">
+            <div class="dialog_title_close">
+                <div class="dialog_title_container">
+                    <h2>NAME</h2>
+                </div>
+                <div class="dialog_close_container">
+                    <img src="assets/icons/icons8-cancel-64.png" alt="">
+                </div>
+            </div>
+
+            <div class="dialog_price_container">
+                <div class="dialog_price_info">
+                    <div class="dialog_price"><span>8,50€</span></div>
+                    <div class="dialog_info"><span>Info Text</span></div>
+                </div>
+            </div>
+            <div class="dialog_selection">
+                <div class="dialog_check_label_container">
+                    <input class="dialog_check_input" id="option_item_2" class="" type="checkbox" value="delivery">
+                    <label for="option_item_2">
+                        <span></span>
+                        <div><span>Text Text Text</span></div>
+                    </label>
+                </div>
+                <div class="dialog_check_label_container">
+                    <input class="dialog_check_input" id="option_item_3" class="" type="checkbox" value="delivery">
+                    <label for="option_item_3">
+                        <span class="checkbox_icon"></span>
+                        <div><span>Text Text Text</span></div>
+                    </label>
+                </div>
+                <div class="dialog_check_label_container">
+                    <input class="dialog_check_input" id="option_item_4" class="" type="checkbox" value="delivery">
+                    <label for="option_item_4">
+                        <span></span>
+                        <div><span>Text Text Text</span></div>
+                    </label>
+                </div>
+            </div>
+            <hr>
+            <div class="dialog_order_btn">
+                <button type="button" aria-label="Bezahlen">
+                    <span>PREIS</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    </div>
     <main class="content">
         <section class="content_area">
             <article class="title">
@@ -34,6 +85,11 @@
                     <figcaption class="title_img"></figcaption>
                 </figure>
                 <section class="title_info">
+                    <div class="title_logo">
+                        <div class="title_logo_container">
+                            <img src="assets/icons/icons8-sushi-logo-64.png" alt="">
+                        </div>
+                    </div>
                     <div class="info_area">
                         <div class="info_left">
                             <div class="title_info_left">
@@ -105,9 +161,10 @@
                 </div>
                 <div class="basket_deliver_pickUp_toggle_area">
                     <div class="basket_deliver_pickUp">
-                        <div class="deliver background_white">
-                            <input id="option_item_0" class="basket_toggle_input" type="radio" value="delivery">
-                            <label class="basket_toggle_label" for="option_item_0">
+                        <div id="deliver" class="deliver">
+                            <input id="option_item_0" class="basket_toggle_input" type="radio" value="deliver">
+                            <label onclick="toggleDeliverPickUp('deliver')" class="basket_toggle_label"
+                                for="option_item_0">
                                 <span class="basket_display">
                                     <div class="basket_display_img"><img src="assets/icons/icons8-bicycle-64.png"
                                             alt=""></div>
@@ -118,9 +175,10 @@
                                 </span>
                             </label>
                         </div>
-                        <div class="pickup">
-                            <input id="option_item_1" class="basket_toggle_input" type="radio" value="delivery">
-                            <label class="basket_toggle_label" for="option_item_1">
+                        <div id="pickup" class="pickup">
+                            <input id="option_item_1" class="basket_toggle_input" type="radio" value="pickup">
+                            <label onclick="toggleDeliverPickUp('pickup')" class="basket_toggle_label"
+                                for="option_item_1">
                                 <span class="basket_display">
                                     <div><img src="assets/icons/icons8-essen-abholen-64.png" alt=""></div>
                                     <div>
@@ -133,60 +191,10 @@
                     </div>
                 </div>
                 <div class="basket_item_price_area ">
-                    <div id="itemBasket">
-                        <div class="basket_info_area">
-                            <div class="info_name_price">
-                                <div class="info_name">
-                                    <span>NAME</span>
-                                </div>
-                                <div class="info_price">
-                                    <span>PRICE</span>
-                                </div>
-                            </div>
-                            <div class="info_remark_howmany">
-                                <div class="info_remark">
-                                    <p>Anmerkung hinzufügen</p>
-                                </div>
-                                <div class="info_toggle_howmany">
-                                    <span class="info_toggle_plus_minus">
-                                        <img src="assets/icons/icons8-minus-64.png" alt="">
-                                    </span>
-                                    <div class="info_howmany">
-                                        <span>1</span>
-                                    </div>
-                                    <span class="info_toggle_plus_minus">
-                                        <img src="assets/icons/icons8-plus-64.png" alt="">
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dividing_line"></div>
-                    </div>
-                    <div id="priceBasket">
-                        <div class="basket_price">
-                            <table>
-                                <tr>
-                                    <td class="subtotal_table_left">Zwischensumme</td>
-                                    <td class="price_table_right">24,70 €</td>
-                                </tr>
-                                <tr>
-                                    <td class="delivery-costs_table_left">Lieferkosten</td>
-                                    <td id="deliveryCosts" class="price_table_right">24,70 €</td>
-                                </tr>
-                                <tr>
-                                    <td class="total-price_table_left">Gesamt</td>
-                                    <td class="end-price_table_right">24,70 €</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="basket_order_btn">
-                            <button type="button" aria-label="Bezahlen">
-                                <span>Bestellen</span>
-                            </button>
-                        </div>
-                    </div>
+                    <div id="itemBasket"></div>
+                    <div id="priceBasket"></div>
                 </div>
-                <div class="basket_ordering_info">
+                <div id="basketOrderInfo" class="basket_ordering_info">
                     <div class="basket_info">
                         <img src="assets/icons/icons8-shopping-basket-64.png" alt="">
                         <h2>Fülle deinen Warenkorb</h2>
@@ -213,6 +221,41 @@
     <script src="scripts/db.js"></script>
     <script src="script.js"></script>
     <script src="scripts/template.js"></script>
+    <script src="scripts/support.js"></script>
 </body>
 
 </html>
+
+
+
+function createItemBasketHtml() {
+return `
+<div class="basket_info_area">
+    <div class="info_name_price">
+        <div class="info_name">
+            <span>${item.category}</span>
+        </div>
+        <div class="info_price">
+            <span>PRICE</span>
+        </div>
+    </div>
+    <div class="info_remark_how-many">
+        <div class="info_remark">
+            <p>Anmerkung hinzufügen</p>
+        </div>
+        <div class="info_toggle_how-many">
+            <span class="info_toggle_plus_minus">
+                <img src="assets/icons/icons8-minus-64.png" alt="">
+            </span>
+            <div class="info_howmany">
+                <span>1</span>
+            </div>
+            <span class="info_toggle_plus_minus">
+                <img src="assets/icons/icons8-plus-64.png" alt="">
+            </span>
+        </div>
+    </div>
+</div>
+<div class="dividing_line">
+</div>`;
+}

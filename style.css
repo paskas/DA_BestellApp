@@ -68,6 +68,30 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.title_logo {
+    width: 100%;
+    max-width: 960px;
+}
+
+.title_logo_container {
+    border: 0.5px solid rgba(128, 128, 128, 0.459);
+    background-color: white;
+    border-radius: 8px;
+    width: 64px;
+    height: 64px;
+    margin-left: 16px;
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title_logo_container img {
+    height: 48px;
+    width: 48px;
 }
 
 .info_area {

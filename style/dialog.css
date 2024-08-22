@@ -1,0 +1,129 @@
+.order_dishes_dialog {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+.dialog_container {
+    background-color: white;
+    width: 50%;
+    height: auto;
+    max-width: 960px;
+    border-radius: 16px;
+    border: 1px solid rgb(216, 216, 216);
+    box-shadow: 0px 0px 24px -8px rgb(160, 160, 160) inset;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.dialog_title_close {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+.dialog_title_container {
+    flex-wrap: wrap;
+}
+
+.dialog_close_container {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialog_close_container img {
+    height: 44px;
+}
+
+.dialog_close_container:hover {
+    background-color: rgb(216, 216, 216);
+    border-radius: 50%;
+    transition: 200ms;
+}
+
+.dialog_price_container {
+    padding: 16px;
+}
+
+.dialog_price_info {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dialog_selection {
+    box-shadow: 0px 0px 24px -8px rgb(160, 160, 160) inset;
+    border: 1px solid rgb(216, 216, 216);
+    padding: 16px;
+}
+
+.dialog_check_label_container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+    padding: 4px 0 4px 0;
+}
+
+
+.dialog_check_label_container label {
+    cursor: pointer;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+.dialog_check_input{
+    cursor: pointer;
+}
+
+.dialog_order_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0 8px 0;
+}
+
+.dialog_order_btn button {
+    background-color: #376E6F;
+    border: none;
+    border-radius: 16px;
+    width: 50%;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.dialog_order_btn button:hover {
+    font-weight: bold;
+    transform: scale(1.06);
+    transition: 200ms;
+}
+
+
+
+
+
+
+
+
+
+
+

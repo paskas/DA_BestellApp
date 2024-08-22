@@ -108,7 +108,7 @@
     text-decoration: underline;
 }
 
-.info_remark_howmany {
+.info_remark_how-many {
     width: 100%;
     display: flex;
     align-items: center;
@@ -123,7 +123,7 @@
     text-decoration: underline;
 }
 
-.info_toggle_howmany {
+.info_toggle_how-many {
     display: flex;
     align-items: center;
     justify-content: space-between;

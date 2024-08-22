@@ -31,12 +31,67 @@ function createItemHtml(item) {
             </div>
         </div>
         <div class="order_plus">
-            <img onclick="" src="assets/icons/icons8-plus-64.png" alt="Plus Icon">
+            <img onclick="addItemToBasket()" src="assets/icons/icons8-plus-64.png" alt="Plus Icon">
         </div>
-    </div>
-    `;
+    </div>`;
 }
 
+function createItemBasketHtml() {
+    return `
+    <div class="basket_info_area">
+        <div class="info_name_price">
+            <div class="info_name">
+                <span>NAME</span>
+            </div>
+            <div class="info_price">
+                <span>PRICE</span>
+            </div>
+        </div>
+        <div class="info_remark_how-many">
+            <div class="info_remark">
+                <p>Anmerkung hinzufügen</p>
+            </div>
+            <div class="info_toggle_how-many">
+                <span class="info_toggle_plus_minus">
+                    <img src="assets/icons/icons8-minus-64.png" alt="">
+                </span>
+                <div class="info_howmany">
+                    <span>1</span>
+                </div>
+                <span class="info_toggle_plus_minus">
+                    <img src="assets/icons/icons8-plus-64.png" alt="">
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="dividing_line">
+    </div>`;
+}
+
+function createPriceBasketHtml() {
+    return `
+    <div class="basket_price">
+        <table>
+            <tr>
+                <td class="subtotal_table_left">Zwischensumme</td>
+                <td class="price_table_right">24,70 €</td>
+            </tr>
+            <tr>
+                <td class="delivery-costs_table_left">Lieferkosten</td>
+                <td id="deliveryCosts" class="price_table_right">24,70 €</td>
+            </tr>
+            <tr>
+                <td class="total-price_table_left">Gesamt</td>
+                <td class="end-price_table_right">24,70 €</td>
+            </tr>
+        </table>
+    </div>
+    <div class="basket_order_btn">
+        <button type="button" aria-label="Bezahlen">
+            <span>Bestellen</span>
+        </button>
+    </div>`;
+}
 
 
 

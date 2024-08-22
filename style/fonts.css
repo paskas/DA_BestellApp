@@ -139,3 +139,7 @@
 .info_remark p {
   font-size: 12px;
 }
+
+.dialog_price span {
+  font-weight: bold;
+}
