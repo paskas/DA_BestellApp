@@ -36,16 +36,28 @@
                 <section class="title_info">
                     <div class="info_area">
                         <div class="info_left">
-                            <div>NAME</div>
+                            <div class="title_info_left">
+                                <h1>MoreSushi</h1>
+                            </div>
                             <div class="info_left_details">
-                                <div>STERNE</div>
-                                <div>MINUTEN</div>
-                                <div>LIEFERN</div>
+                                <div class="left_details">
+                                    <div><img src="assets/icons/icons8-stern-48.png" alt=""></div>
+                                    <span class="info_rating"><a href="#"><b>4.8</b> (300+)</a>
+                                    </span>
+                                </div>
+                                <div class="left_details">
+                                    <div><img src="assets/icons/icons8-shopping-basket-64.png" alt=""></div>
+                                    <span>Min. 40,00 €</span>
+                                </div>
+                                <div class="left_details">
+                                    <div><img src="assets/icons/icons8-bicycle-64.png" alt=""></div>
+                                    <span>5,00 €</span>
+                                </div>
                             </div>
                         </div>
                         <div class="info_right">
-                            <div>INFO</div>
-                            <div>LIKE</div>
+                            <div class="right_img_container_info"><img src="assets/icons/icons8-info-64.png" alt=""><span>Über uns</span></div>
+                            <div class="right_img_container_fav"><img src="assets/icons/icons8-favorite-64.png" alt=""></div>
                         </div>
                     </div>
                 </section>
@@ -118,39 +130,66 @@
                         </div>
                     </div>
                 </div>
-                <div class="basket_item_area">
-                    <div class="basket_info_area">
-                        <div class="info_name_price">
-                            <div class="info_name">
-                                <span>NAME</span>
+                <div class="basket_item_price_area">
+                    <div id="itemBasket">
+                        <div class="basket_info_area">
+                            <div class="info_name_price">
+                                <div class="info_name">
+                                    <span>NAME</span>
+                                </div>
+                                <div class="info_price">
+                                    <span>PRICE</span>
+                                </div>
                             </div>
-                            <div class="info_price">
-                                <span>PRICE</span>
+                            <div class="info_remark_howmany">
+                                <div class="info_remark">
+                                    <p>Anmerkung hinzufügen</p>
+                                </div>
+                                <div class="info_toggle_howmany">
+                                    <span class="info_toggle_plus_minus">
+                                        <img src="assets/icons/icons8-minus-64.png" alt="">
+                                    </span>
+                                    <div class="info_howmany">
+                                        <span>1</span>
+                                    </div>
+                                    <span class="info_toggle_plus_minus">
+                                        <img src="assets/icons/icons8-plus-64.png" alt="">
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                        <div class="info_remark_howmany">
-                            <div class="info_remark">
-                                <p>Anmerkung hinzufügen</p>
-                            </div>
-                            <div class="info_toggle_howmany">
-                                <span class="info_toggle_plus_minus">
-                                    <img src="assets/icons/icons8-minus-64.png" alt="">
-                                </span>
-                                <div class="info_howmany">
-                                    <span>1</span>
-                                </div>
-                                <span class="info_toggle_plus_minus">
-                                    <img src="assets/icons/icons8-plus-64.png" alt="">
-                                </span>
-                            </div>
+                        <div class="dividing_line"></div>
+                    </div>
+                    <div id="priceBasket">
+                        <div class="basket_price">
+                            <table>
+                                <tr>
+                                    <td class="subtotal_table_left">Zwischensumme</td>
+                                    <td class="price_table_right">24,70 €</td>
+                                </tr>
+                                <tr>
+                                    <td class="delivery-costs_table_left">Lieferkosten</td>
+                                    <td id="deliveryCosts" class="price_table_right">24,70 €</td>
+                                </tr>
+                                <tr>
+                                    <td class="total-price_table_left">Gesamt</td>
+                                    <td class="end-price_table_right">24,70 €</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <button>
+                                <span></span>
+                            </button>
                         </div>
                     </div>
-                    <div class="dividing_line"></div>
                 </div>
-                <div class="basket_ordering_price">
-                    <img src="assets/icons/icons8-shopping-basket-64.png" alt="">
-                    <h2>Fülle deinen Warenkorb</h2>
-                    <p>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</p>
+                <div class="basket_ordering_info">
+                    <div class="basket_info">
+                        <img src="assets/icons/icons8-shopping-basket-64.png" alt="">
+                        <h2>Fülle deinen Warenkorb</h2>
+                        <p>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</p>
+                    </div>
                 </div>
             </div>
         </aside>
@@ -175,5 +214,3 @@
 </body>
 
 </html>
-
-fill_shopping_cart

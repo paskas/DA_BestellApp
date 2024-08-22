@@ -31,7 +31,6 @@ header {
 
 .header_mid h1 {
     color: white;
-    font-size: 32px;
 }
 
 .header_right {
@@ -39,7 +38,7 @@ header {
     gap: 32px;
 }
 
-.header_right img{
+.header_right img {
     height: 48px;
     width: 48px;
 }
@@ -92,6 +91,27 @@ header {
     flex-direction: row;
     gap: 24px;
     flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.left_details {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.left_details img {
+    display: flex;
+    align-items: center;
+    height: 20px;
+}
+
+.left_details span {
+    font-size: 12px;
+}
+
+.info_rating a {
+    text-decoration: underline;
 }
 
 .info_right {
@@ -100,6 +120,35 @@ header {
     flex-direction: row;
     gap: 24px;
     flex-wrap: wrap;
+}
+
+.right_img_container_info {
+    cursor: pointer;
+    background-color: rgb(211, 211, 211);
+    border-radius: 16px;
+    height: 34px;
+    width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.right_img_container_fav {
+    cursor: pointer;
+    background-color: rgb(211, 211, 211);
+    border-radius: 50%;
+    height: 34px;
+    width: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info_right img {
+    display: flex;
+    align-items: center;
+    height: 32px;
 }
 
 /* ----- navigation ----- */
@@ -159,7 +208,7 @@ footer {
 }
 
 .content_footer {
-    position:sticky;
+    position: sticky;
     bottom: 0;
     width: 100%;
     margin: 0 48px 0 48px;
@@ -172,10 +221,42 @@ footer {
 .footer_left {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 24px;
 }
 
 .footer_right {
     display: flex;
     align-items: center;
+}
+
+@media screen and (min-width: 320px) and (max-width: 960px) {
+    .info_right {
+        justify-content: center;
+    }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 560px) {
+    .info_area {
+        max-width: 960px;
+        width: 100%;
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .header_mid {
+        display: none;
+    }
+
+    .header_right {
+        gap: 8px;
+    }
+
+    .nav_ul_li {
+        gap: 0;
+    }
 }

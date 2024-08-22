@@ -104,3 +104,10 @@
     border-radius: 50%;
     transition: 200ms;
 }
+
+/* responsive */
+@media screen and (min-width: 320px) and (max-width: 960px) {
+    .content_area{
+        width: 100%;
+    }
+}
