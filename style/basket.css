@@ -176,6 +176,13 @@
     text-align: right;
 }
 
+.basket_order_btn {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* basket ordering info */
 .basket_ordering_info {
     width: 100%;
@@ -192,7 +199,7 @@
 
 /* responsive */
 @media screen and (min-width: 320px) and (max-width: 960px) {
-    .basket_area{
+    .basket_area {
         display: none;
     }
 }
