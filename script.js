@@ -27,3 +27,4 @@ function goToCategory(category) {
         element.scrollIntoView({ behavior: 'smooth' });
     }
 }
+

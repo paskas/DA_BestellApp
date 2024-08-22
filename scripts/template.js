@@ -20,20 +20,20 @@ function createCategoryHtml(category) {
 
 function createItemHtml(item) {
     return `
-        <div class="order_part">
+    <div class="order_part">
+        <div class="order_info">
             <div>
-                <div>
-                    <h2>${item.name}</h2>
-                </div>
-                <div><span>${item.info}</span></div>
-                <div>
-                    <h3>${item.price.toFixed(2)} €</h3>
-                </div>
+                <h2>${item.name}</h2>
             </div>
-            <div class="order_plus">
-                <img src="assets/icons/icons8-plus-64.png" alt="Plus Icon">
+            <div><span>${item.info}</span></div>
+            <div>
+                <h3>${item.price.toFixed(2)} €</h3>
             </div>
         </div>
+        <div class="order_plus">
+            <img onclick="" src="assets/icons/icons8-plus-64.png" alt="Plus Icon">
+        </div>
+    </div>
     `;
 }
 

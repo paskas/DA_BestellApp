@@ -73,7 +73,13 @@
     padding: 16px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+}
+
+.order_info{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .order_part:hover {

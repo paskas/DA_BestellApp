@@ -86,11 +86,97 @@
     font-size: 12px;
 }
 
-.fill_shopping_cart{
+/* basket item area */
+.basket_item_area{
+    width: 100%;
+    padding: 16px;
+}
+
+.basket_info_area{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.info_name_price{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 16px 0 16px 0;
+}
+
+.info_name span{
+    cursor: pointer;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.info_price span{
+    font-weight: bold;
+}
+
+.info_remark_howmany{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 16px;
+}
+
+.info_remark p{
+    width: 104px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.info_toggle_howmany{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.info_howmany{
+    height: 44px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info_howmany span{
+    font-weight: bold;
+}
+
+.info_toggle_plus_minus{
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info_toggle_plus_minus img{
+    height: 44px;
+}
+
+.info_toggle_plus_minus:hover {
+    background-color: rgb(216, 216, 216);
+    border-radius: 50%;
+    transition: 200ms;
+}
+
+
+/* basket ordering price area */
+.basket_ordering_price{
+    width: 100%;
     text-align: center;
     padding: 48px;
 }
 
-.fill_shopping_cart img{
+.basket_ordering_price img{
     height: 48px;
 }
