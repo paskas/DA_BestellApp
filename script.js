@@ -1,9 +1,13 @@
+let shoppingCart = {};
+
+
 function init() {
     document.getElementById('deliver').classList.add('background_white');
     renderCategoriesOrders();
 }
 
 
+/* categories Render orders */
 function renderCategoriesOrders() {
     let titleOrders = document.getElementById('dishesOrders');
     titleOrders.innerHTML = '';
@@ -15,6 +19,7 @@ function renderCategoriesOrders() {
 }
 
 
+/* items Render orders */
 function renderItemsOrders(items, categoryIndex) {
     let ordersHtml = '';
     for (let i = 0; i < items.length; i++) {
@@ -25,41 +30,80 @@ function renderItemsOrders(items, categoryIndex) {
 }
 
 
-function goToCategory(category) {
-    const element = document.getElementById(`category-${category}`);
-    if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-
-function toggleDeliverPickUp(selection) {
-    document.getElementById('deliver').classList.remove('background_white');
-    document.getElementById('pickup').classList.remove('background_white');
-    if (selection === 'deliver') {
-        document.getElementById('deliver').classList.add('background_white');
-    } else if (selection === 'pickup') {
-        document.getElementById('pickup').classList.add('background_white');
-    }
-}
-
-
-function addItemToBasket(categoryIndex, dishesIndex) {
-    let categoryKeys = Object.keys(orderDishes); 
+/* add item to shopping cart */
+function addItemToShoppingCart(categoryIndex, dishesIndex) {
+    let categoryKeys = Object.keys(orderDishes);
     let categoryKey = categoryKeys[categoryIndex];
     let category = orderDishes[categoryKey];
     if (category && category.items && category.items[dishesIndex]) {
         let item = category.items[dishesIndex];
-        document.getElementById('basketOrderInfo').classList.add('d-none');
-        let basketitem = document.getElementById('itemBasket');
-        basketitem.innerHTML += createItemBasketHtml(item);
-    } else {
-        console.error("Fehler beim Hinzufügen des Artikels: Kategorie oder Artikel nicht gefunden.");
+        let itemKey = `${categoryIndex}-${dishesIndex}`;    // Unique key for each item in the shopping cart
+        verificationShoppingCart(itemKey, item)
+        renderShoppingCart();     // Update shopping cart
     }
 }
 
 
+/* check shopping cart */
+function verificationShoppingCart(itemKey, item) {
+    if (shoppingCart[itemKey]) {    // Check whether the item is already in the shopping cart
+        shoppingCart[itemKey].quantity += 1;    // Increase quantity
+        shoppingCart[itemKey].totalPrice += item.price;     // Increase total price
+    } else {
+        addFirstItemToShoppingCart(itemKey, item) // add item for the first time
+    }
+}
 
+
+/* add item for the first time To Shopping Cart */
+function addFirstItemToShoppingCart(itemKey, item) {
+    document.getElementById('basketOrderInfo').classList.add('d-none');
+    shoppingCart[itemKey] = {
+        item: item,
+        quantity: 1,
+        totalPrice: item.price
+    };
+    return shoppingCart[itemKey];
+}
+
+
+/* items Render orders shopping cart */
+function renderShoppingCart() {
+    let basketitem = document.getElementById('itemBasket');
+    basketitem.innerHTML = '';
+    for (let itemKey in shoppingCart) {
+        let basketItem = shoppingCart[itemKey];
+        basketitem.innerHTML += createItemShoppingCartHtml(basketItem, itemKey); // Transferring itemKey
+    }
+}
+
+
+/* increase order */
+function increaseItem(itemKey) {
+    shoppingCart[itemKey].quantity += 1;
+    shoppingCart[itemKey].totalPrice += shoppingCart[itemKey].item.price;
+    renderShoppingCart();
+}
+
+
+/* reduce order and check if empty */
+function decreaseItem(itemKey) {
+    if (shoppingCart[itemKey].quantity > 1) {
+        shoppingCart[itemKey].quantity -= 1;
+        shoppingCart[itemKey].totalPrice -= shoppingCart[itemKey].item.price;
+    } else {
+        delete shoppingCart[itemKey]; // Remove item from the shopping cart when the quantity reaches 1
+    } if (Object.keys(shoppingCart).length === 0) { // check if shoppingCart is empty 
+        document.getElementById('basketOrderInfo').classList.remove('d-none');
+    }
+    renderShoppingCart();
+}
+
+
+
+/* function addPriceShoppingCart(basketItem, itemKey) {
+    document.getElementById('deliver').classList.add('background_white');
+} */
 
 
 

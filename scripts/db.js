@@ -138,4 +138,3 @@ let orderDishes = {
     }
 }
 
-console.log(orderDishes[index]);

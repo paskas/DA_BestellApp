@@ -18,7 +18,8 @@ function createCategoryHtml(category, categoryIndex) {
     </div>`;
 }
 
-function createItemHtml(item, categoryIndex, dishesIndex) {
+
+function createItemHtml(item, categoryIndex, itemsDishesIndex) {
     return `
     <div class="order_part">
         <div class="order_info">
@@ -31,12 +32,16 @@ function createItemHtml(item, categoryIndex, dishesIndex) {
             </div>
         </div>
         <div class="order_plus">
-            <img onclick="addItemToBasket(${categoryIndex},${dishesIndex})" src="assets/icons/icons8-plus-64.png" alt="Plus Icon">
+            <img onclick="addItemToShoppingCart(${categoryIndex},${itemsDishesIndex})" src="assets/icons/icons8-plus-64.png" alt="Plus Icon">
         </div>
     </div>`;
 }
 
-function createItemBasketHtml(item, number) {
+
+function createItemShoppingCartHtml(basketItem, itemKey) {
+    let item = basketItem.item;
+    let quantity = basketItem.quantity;
+    let totalPrice = basketItem.totalPrice.toFixed(2);
     return `
     <div class="basket_info_area">
         <div class="info_name_price">
@@ -44,7 +49,7 @@ function createItemBasketHtml(item, number) {
                 <span>${item.name}</span>
             </div>
             <div class="info_price">
-                <span>${item.price.toFixed(2)} €</span>
+                <span>${totalPrice} €</span>
             </div>
         </div>
         <div class="info_remark_how-many">
@@ -52,14 +57,14 @@ function createItemBasketHtml(item, number) {
                 <p>Anmerkung hinzufügen</p>
             </div>
             <div class="info_toggle_how-many">
-                <span onclick="" class="info_toggle_plus_minus">
-                    <img src="assets/icons/icons8-minus-64.png" alt="">
+                <span class="info_toggle_plus_minus">
+                    <img src="assets/icons/icons8-minus-64.png" alt="" onclick="decreaseItem('${itemKey}')">
                 </span>
                 <div class="info_howmany">
-                    <span>${number}</span>
+                    <span>${quantity}</span>
                 </div>
-                <span onclick="" class="info_toggle_plus_minus">
-                    <img src="assets/icons/icons8-plus-64.png" alt="">
+                <span class="info_toggle_plus_minus">
+                    <img src="assets/icons/icons8-plus-64.png" alt="" onclick="increaseItem('${itemKey}')">
                 </span>
             </div>
         </div>
@@ -67,21 +72,25 @@ function createItemBasketHtml(item, number) {
     <div class="dividing_line"></div>`;
 }
 
-function createPriceBasketHtml() {
+
+function createPriceShoppingCartHtml(basketItem, itemKey) {
+    let item = basketItem.item;
+    let quantity = basketItem.quantity;
+    let totalPrice = basketItem.totalPrice.toFixed(2);
     return `
     <div class="basket_price">
         <table>
             <tr>
                 <td class="subtotal_table_left">Zwischensumme</td>
-                <td class="price_table_right">24,70 €</td>
+                <td class="price_table_right">${subtotal} €</td>
             </tr>
             <tr>
                 <td class="delivery-costs_table_left">Lieferkosten</td>
-                <td id="deliveryCosts" class="price_table_right">24,70 €</td>
+                <td id="deliveryCosts" class="price_table_right">${deliveryCosts} €</td>
             </tr>
             <tr>
                 <td class="total-price_table_left">Gesamt</td>
-                <td class="end-price_table_right">24,70 €</td>
+                <td class="end-price_table_right">${totalPrice} €</td>
             </tr>
         </table>
     </div>
@@ -93,6 +102,15 @@ function createPriceBasketHtml() {
 }
 
 
+function renderAlertMessage() {
+    return `
+    <div id="alertMessageDialog" class="alert_container">
+        <div class="alert_content_container">
+            <p>Fehlende Daten !</p>
+            <button onclick="confirmAlert(true)">OK</button>
+        </div>
+    </div>`
+}
 
 
 
@@ -111,38 +129,3 @@ function createPriceBasketHtml() {
 
 
 
-
-// function createdOrderHtml(category) {
-//     let orderHtml = `
-//     <div class="category_order">
-//         <figure>
-//             <img src="${category.image}" alt="${category.category}">
-//         </figure>
-//         <div>
-//             <h2>${category.category}</h2>
-//         </div>
-//         <div>
-//             <p>${category.info}</p>
-//         </div>
-//     </div>
-//     `;
-//     category.items.forEach(item => {
-//         orderHtml += `
-//     <div class="order_part">
-//         <div>
-//             <div>
-//                 <h2>${item.name}</h2>
-//             </div>
-//             <div><span>${item.info}</span></div>
-//             <div>
-//                 <h3>${item.price.toFixed(2)} €</h3>
-//             </div>
-//         </div>
-//         <div class="order_plus">
-//             <img src="assets/icons/icons8-plus-64.png" alt="Plus Icon">
-//         </div>
-//     </div>
-//     `;
-//     });
-//     return orderHtml;
-// }
