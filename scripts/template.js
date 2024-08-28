@@ -73,24 +73,21 @@ function createItemShoppingCartHtml(basketItem, itemKey) {
 }
 
 
-function createPriceShoppingCartHtml(basketItem, itemKey) {
-    let item = basketItem.item;
-    let quantity = basketItem.quantity;
-    let totalPrice = basketItem.totalPrice.toFixed(2);
+function createPriceShoppingCartHtml() {
     return `
     <div class="basket_price">
         <table>
             <tr>
                 <td class="subtotal_table_left">Zwischensumme</td>
-                <td class="price_table_right">${subtotal} €</td>
+                <td id="subtotalPrice" class="price_table_right">${subtotalPrice.toFixed(2)} €</td>
             </tr>
             <tr>
                 <td class="delivery-costs_table_left">Lieferkosten</td>
-                <td id="deliveryCosts" class="price_table_right">${deliveryCosts} €</td>
+                <td id="deliveryCosts" class="price_table_right">${deliveryCosts.toFixed(2)} €</td>
             </tr>
             <tr>
                 <td class="total-price_table_left">Gesamt</td>
-                <td class="end-price_table_right">${totalPrice} €</td>
+                <td id="totalPrice" class="end-price_table_right">${totalPrice.toFixed(2)} €</td>
             </tr>
         </table>
     </div>
