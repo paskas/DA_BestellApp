@@ -10,16 +10,16 @@ function renderCategoriesOrders() {
     let categories = Object.values(orderDishes);
     for (let i = 0; i < categories.length; i++) {
         let category = categories[i];
-        titleOrders.innerHTML += createCategoryHtml(category);
+        titleOrders.innerHTML += createCategoryHtml(category, i);
     }
 }
 
 
-function renderItemsOrders(items) {
+function renderItemsOrders(items, categoryIndex) {
     let ordersHtml = '';
     for (let i = 0; i < items.length; i++) {
         let item = items[i];
-        ordersHtml += createItemHtml(item);
+        ordersHtml += createItemHtml(item, categoryIndex, i);
     }
     return ordersHtml;
 }
@@ -32,6 +32,7 @@ function goToCategory(category) {
     }
 }
 
+
 function toggleDeliverPickUp(selection) {
     document.getElementById('deliver').classList.remove('background_white');
     document.getElementById('pickup').classList.remove('background_white');
@@ -42,7 +43,23 @@ function toggleDeliverPickUp(selection) {
     }
 }
 
-function addItemToBasket() {
-    document.getElementById('basketOrderInfo').classList.add('d-none');
 
+function addItemToBasket(categoryIndex, dishesIndex) {
+    let categoryKeys = Object.keys(orderDishes); 
+    let categoryKey = categoryKeys[categoryIndex];
+    let category = orderDishes[categoryKey];
+    if (category && category.items && category.items[dishesIndex]) {
+        let item = category.items[dishesIndex];
+        document.getElementById('basketOrderInfo').classList.add('d-none');
+        let basketitem = document.getElementById('itemBasket');
+        basketitem.innerHTML += createItemBasketHtml(item);
+    } else {
+        console.error("Fehler beim Hinzufügen des Artikels: Kategorie oder Artikel nicht gefunden.");
+    }
 }
+
+
+
+
+
+

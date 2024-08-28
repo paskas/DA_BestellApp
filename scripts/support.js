@@ -1,1 +1,1 @@
-let basketItems = []
+let basketItems = {};

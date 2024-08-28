@@ -1,4 +1,4 @@
-function createCategoryHtml(category) {
+function createCategoryHtml(category, categoryIndex) {
     return `
     <div id="category-${category.category}" class="category_order">
         <div class="category_container">
@@ -13,12 +13,12 @@ function createCategoryHtml(category) {
             </div>
         </div>
         <div class="items_container">
-            ${renderItemsOrders(category.items)}
+            ${renderItemsOrders(category.items, categoryIndex)}
         </div>
     </div>`;
 }
 
-function createItemHtml(item) {
+function createItemHtml(item, categoryIndex, dishesIndex) {
     return `
     <div class="order_part">
         <div class="order_info">
@@ -31,20 +31,20 @@ function createItemHtml(item) {
             </div>
         </div>
         <div class="order_plus">
-            <img onclick="addItemToBasket()" src="assets/icons/icons8-plus-64.png" alt="Plus Icon">
+            <img onclick="addItemToBasket(${categoryIndex},${dishesIndex})" src="assets/icons/icons8-plus-64.png" alt="Plus Icon">
         </div>
     </div>`;
 }
 
-function createItemBasketHtml() {
+function createItemBasketHtml(item, number) {
     return `
     <div class="basket_info_area">
         <div class="info_name_price">
             <div class="info_name">
-                <span>NAME</span>
+                <span>${item.name}</span>
             </div>
             <div class="info_price">
-                <span>PRICE</span>
+                <span>${item.price.toFixed(2)} €</span>
             </div>
         </div>
         <div class="info_remark_how-many">
@@ -52,20 +52,19 @@ function createItemBasketHtml() {
                 <p>Anmerkung hinzufügen</p>
             </div>
             <div class="info_toggle_how-many">
-                <span class="info_toggle_plus_minus">
+                <span onclick="" class="info_toggle_plus_minus">
                     <img src="assets/icons/icons8-minus-64.png" alt="">
                 </span>
                 <div class="info_howmany">
-                    <span>1</span>
+                    <span>${number}</span>
                 </div>
-                <span class="info_toggle_plus_minus">
+                <span onclick="" class="info_toggle_plus_minus">
                     <img src="assets/icons/icons8-plus-64.png" alt="">
                 </span>
             </div>
         </div>
     </div>
-    <div class="dividing_line">
-    </div>`;
+    <div class="dividing_line"></div>`;
 }
 
 function createPriceBasketHtml() {
