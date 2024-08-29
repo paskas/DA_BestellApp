@@ -1,11 +1,12 @@
 let shoppingCart = {};
-let deliveryCosts = 0; 
-let subtotalPrice = 5; 
+let deliveryCosts = 5; 
+let subtotalPrice = 0; 
 let totalPrice = 0; 
 
 
 function init() {
     document.getElementById('deliver').classList.add('background_white');
+    document.getElementById('priceBasket').classList.add('d-none');
     renderCategoriesOrders();
     document.getElementById('priceBasket').innerHTML = createPriceShoppingCartHtml();
     shoppingCartPrices();
@@ -64,6 +65,7 @@ function verificationShoppingCart(itemKey, item) {
 /* add item for the first time To Shopping Cart */
 function addFirstItemToShoppingCart(itemKey, item) {
     document.getElementById('basketOrderInfo').classList.add('d-none');
+    document.getElementById('priceBasket').classList.remove('d-none');
     shoppingCart[itemKey] = {
         item: item,
         quantity: 1,
@@ -103,6 +105,7 @@ function decreaseItem(itemKey) {
     }
     if (Object.keys(shoppingCart).length === 0) { // check if shoppingCart is empty 
         document.getElementById('basketOrderInfo').classList.remove('d-none');
+        document.getElementById('priceBasket').classList.add('d-none');
     }
     renderShoppingCart();
 }
