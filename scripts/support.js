@@ -49,6 +49,8 @@ function calculateSubtotal() {
     return subtotal;
 }
 
+
+/* clear shopping cart new render*/
 function clearShoppingCart() {
     document.getElementById('priceBasket').classList.add('d-none');
     document.getElementById('basketOrderInfo').classList.remove('d-none');
@@ -58,6 +60,7 @@ function clearShoppingCart() {
 }
 
 
+/* close click event dialog order */
 function closeSendDialog() {
     const dialog = document.getElementById('sendOrderDialog');
     dialog.addEventListener('click', function (event) {

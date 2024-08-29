@@ -39,12 +39,14 @@
     justify-content: center;
     flex-direction: column;
 }
-.dialog_title_container p{
+
+.dialog_title_container p {
     word-break: break-word;
 }
 
-.dialog_title_money{
-    color: #376E6F;;
+.dialog_title_money {
+    color: #376E6F;
+    ;
     margin-top: 8px;
     text-decoration: underline;
 }
@@ -55,14 +57,3 @@
         margin: auto 16px auto 16px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-

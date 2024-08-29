@@ -106,6 +106,7 @@ function decreaseItem(itemKey) {
 }
 
 
+/* send order button */
 function sendOrder() {
     document.getElementById('sendOrderDialog').classList.remove('d-none');
     let sentDialog = document.getElementById('sendOrderDialog');
