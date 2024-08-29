@@ -254,6 +254,7 @@ footer {
     align-items: center;
 }
 
+/* responsive */
 @media screen and (min-width: 320px) and (max-width: 960px) {
     .info_right {
         justify-content: center;

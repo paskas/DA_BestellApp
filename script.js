@@ -115,3 +115,6 @@ function sendOrder() {
     closeSendDialog();
 }
 
+function openFullscreenBasket(){
+    document.getElementById('dialogBasket').classList.toggle('d-none');
+}
