@@ -29,55 +29,6 @@
             </div>
         </div>
     </header>
-    <div id="orderDishesDialog" class="order_dishes_dialog d-none">
-        <div class="dialog_container ">
-            <div class="dialog_title_close">
-                <div class="dialog_title_container">
-                    <h2>NAME</h2>
-                </div>
-                <div class="dialog_close_container">
-                    <img src="assets/icons/icons8-cancel-64.png" alt="">
-                </div>
-            </div>
-
-            <div class="dialog_price_container">
-                <div class="dialog_price_info">
-                    <div class="dialog_price"><span>8,50€</span></div>
-                    <div class="dialog_info"><span>Info Text</span></div>
-                </div>
-            </div>
-            <div class="dialog_selection">
-                <div class="dialog_check_label_container">
-                    <input class="dialog_check_input" id="option_item_2" class="" type="checkbox" value="delivery">
-                    <label for="option_item_2">
-                        <span></span>
-                        <div><span>Text Text Text</span></div>
-                    </label>
-                </div>
-                <div class="dialog_check_label_container">
-                    <input class="dialog_check_input" id="option_item_3" class="" type="checkbox" value="delivery">
-                    <label for="option_item_3">
-                        <span class="checkbox_icon"></span>
-                        <div><span>Text Text Text</span></div>
-                    </label>
-                </div>
-                <div class="dialog_check_label_container">
-                    <input class="dialog_check_input" id="option_item_4" class="" type="checkbox" value="delivery">
-                    <label for="option_item_4">
-                        <span></span>
-                        <div><span>Text Text Text</span></div>
-                    </label>
-                </div>
-            </div>
-            <hr>
-            <div class="dialog_order_btn">
-                <button type="button" aria-label="Bezahlen">
-                    <span>PREIS</span>
-                </button>
-            </div>
-        </div>
-    </div>
-    </div>
     <main class="content">
         <section class="content_area">
             <article class="title">
@@ -191,9 +142,10 @@
                     </div>
                 </div>
                 <div class="basket_item_price_area ">
-                    <div id="itemBasket"></div>
-                    <div id="priceBasket"></div>
+                    <div id="itemBasket" class="item_basket"></div>
+                    
                 </div>
+                <div id="priceBasket" class="price_basket"></div>
                 <div id="basketOrderInfo" class="basket_ordering_info">
                     <div class="basket_info">
                         <img src="assets/icons/icons8-shopping-basket-64.png" alt="">
@@ -203,6 +155,9 @@
                 </div>
             </div>
         </aside>
+        <div id="sendOrderDialog" class="dialog_order d-none">
+
+        </div>
     </main>
     <footer>
         <div class="content_footer">
@@ -225,5 +180,3 @@
 </body>
 
 </html>
-
-

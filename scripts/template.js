@@ -92,19 +92,23 @@ function createPriceShoppingCartHtml() {
         </table>
     </div>
     <div class="basket_order_btn">
-        <button type="button" aria-label="Bezahlen">
+        <button onclick="sendOrder()" type="button" aria-label="Bezahlen">
             <span>Bestellen</span>
         </button>
     </div>`;
 }
 
 
-function renderAlertMessage() {
+function createDialogOrderHtml() {
     return `
-    <div id="alertMessageDialog" class="alert_container">
-        <div class="alert_content_container">
-            <p>Fehlende Daten !</p>
-            <button onclick="confirmAlert(true)">OK</button>
+    <div class="dialog_container ">
+        <div class="dialog_title">
+            <div class="dialog_title_container">
+                <span><img src="assets/icons/icons8-thank-you-96.png" alt=""></span>
+                <p>Deine Bestellung</p>
+                <p>wurde abgeschickt</p>
+                <span class="dialog_title_money">${totalPrice.toFixed(2)} €</span>
+            </div>
         </div>
     </div>`
 }

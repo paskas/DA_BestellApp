@@ -143,3 +143,8 @@
 .dialog_price span {
   font-weight: bold;
 }
+
+.dialog_title_container{
+  font-size: 32px;
+  font-weight: bold;
+}

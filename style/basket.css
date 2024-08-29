@@ -87,6 +87,7 @@
 .basket_item_price_area {
     width: 100%;
     padding: 16px;
+    overflow-y: scroll;
 }
 
 .basket_info_area {
@@ -158,6 +159,11 @@
 }
 
 /* basket price */
+.price_basket{
+    width: 100%;
+    padding: 16px;
+}
+
 .basket_price {
     margin-top: 16px;
 }

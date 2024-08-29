@@ -1,3 +1,9 @@
+let shoppingCart = {};
+let deliveryCosts = 5;
+let subtotalPrice = 0;
+let totalPrice = 0;
+
+
 /* navigate to the categories */
 function goToCategory(category) {
     const element = document.getElementById(`category-${category}`);
@@ -24,7 +30,7 @@ function toggleDeliverPickUp(selection) {
 }
 
 
-/*  */
+/* updatet price basket */
 function shoppingCartPrices() {
     subtotal = calculateSubtotal();
     totalPrice = subtotal + deliveryCosts;
@@ -34,11 +40,29 @@ function shoppingCartPrices() {
 }
 
 
-/*  */
+/* calculate subtotal price basket */
 function calculateSubtotal() {
     let subtotal = 0;
     for (let itemKey in shoppingCart) {
         subtotal += shoppingCart[itemKey].totalPrice;
     }
     return subtotal;
+}
+
+function clearShoppingCart() {
+    document.getElementById('priceBasket').classList.add('d-none');
+    document.getElementById('basketOrderInfo').classList.remove('d-none');
+    shoppingCart = {};
+    renderShoppingCart();
+    shoppingCartPrices();
+}
+
+
+function closeSendDialog() {
+    const dialog = document.getElementById('sendOrderDialog');
+    dialog.addEventListener('click', function (event) {
+        if (event.target === dialog) {
+            dialog.classList.add('d-none');
+        }
+    });
 }

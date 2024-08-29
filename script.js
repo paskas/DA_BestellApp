@@ -1,10 +1,5 @@
-let shoppingCart = {};
-let deliveryCosts = 5; 
-let subtotalPrice = 0; 
-let totalPrice = 0; 
-
-
 function init() {
+    document.getElementById('sendOrderDialog').classList.add('d-none');
     document.getElementById('deliver').classList.add('background_white');
     document.getElementById('priceBasket').classList.add('d-none');
     renderCategoriesOrders();
@@ -111,5 +106,11 @@ function decreaseItem(itemKey) {
 }
 
 
-
+function sendOrder() {
+    document.getElementById('sendOrderDialog').classList.remove('d-none');
+    let sentDialog = document.getElementById('sendOrderDialog');
+    sentDialog.innerHTML = createDialogOrderHtml();
+    clearShoppingCart();
+    closeSendDialog();
+}
 

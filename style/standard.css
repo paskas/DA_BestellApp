@@ -16,7 +16,7 @@ ul {
 }
 
 .d-none {
-    display: none;
+    display: none!important;
 }
 
 .link_button img {
