@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="style/assets.css">
     <link rel="stylesheet" href="style/orderArea.css">
     <link rel="stylesheet" href="style/basket.css">
-    <link rel="stylesheet" href="style/dialog.css">
+    <link rel="stylesheet" href="style/dialogOrder.css">
+    <link rel="stylesheet" href="style/dialogBasket.css">
 </head>
 
 <body onload="init()">
@@ -29,6 +30,8 @@
             </div>
         </div>
     </header>
+    <div id="dialogBasket" class="dialog_basket_container d-none">
+    </div>
     <main class="content">
         <section class="content_area">
             <article class="title">
@@ -87,9 +90,9 @@
                         <li>
                             <a href="#category-Sushi - Maki" onclick="goToCategory('Sushi - Maki')">Sushi - Maki</a>
                         </li>
-                        <!-- <li> -->
-                        <a href="#category-Sushi - Sashimi" onclick="goToCategory('Sushi - Sashimi')">Sushi -
-                            Sashimi</a>
+                        <li>
+                            <a href="#category-Sushi - Sashimi" onclick="goToCategory('Sushi - Sashimi')">Sushi -
+                                Sashimi</a>
                         </li>
                         <li>
                             <a href="#category-Sushi - Inside-Out" onclick="goToCategory('Sushi - Inside-Out')">Sushi -
@@ -141,9 +144,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="basket_item_price_area ">
+                <div id="basketItemPriceArea" class="basket_item_price_area d-none">
                     <div id="itemBasket" class="item_basket"></div>
-
                 </div>
                 <div id="priceBasket" class="price_basket"></div>
                 <div id="basketOrderInfo" class="basket_ordering_info">
@@ -155,8 +157,7 @@
                 </div>
             </div>
         </aside>
-        <div id="sendOrderDialog" class="dialog_order d-none">
-        </div>
+        <div id="sendOrderDialog" class="dialog_order d-none"></div>
     </main>
     <div class="dialog_basket_btn_container d-none">
         <div class="dialog_basket_btn">
@@ -165,8 +166,7 @@
             </button>
         </div>
     </div>
-    <div id="dialogBasket" class="d-none"></div>
-    <footer>
+    <footer id="footer">
         <div class="content_footer">
             <div class="footer_left footer_left_link_button">
                 <div><a href="#">SOCIAL</a></div>
@@ -187,3 +187,5 @@
 </body>
 
 </html>
+
+

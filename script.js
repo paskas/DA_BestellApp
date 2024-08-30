@@ -3,6 +3,7 @@ function init() {
     document.getElementById('deliver').classList.add('background_white');
     document.getElementById('priceBasket').classList.add('d-none');
     renderCategoriesOrders();
+    loadFromLocalStorage();
     document.getElementById('priceBasket').innerHTML = createPriceShoppingCartHtml();
     shoppingCartPrices();
 }
@@ -41,7 +42,8 @@ function addItemToShoppingCart(categoryIndex, dishesIndex) {
         let itemKey = `${categoryIndex}-${dishesIndex}`;    // Unique key for each item in the shopping cart
         verificationShoppingCart(itemKey, item)
         renderShoppingCart();     // Update shopping cart
-    }
+    } 
+    saveToLocalStorage(); 
 }
 
 
@@ -54,6 +56,7 @@ function verificationShoppingCart(itemKey, item) {
         addFirstItemToShoppingCart(itemKey, item) // add item for the first time
     }
     shoppingCartPrices();
+    saveToLocalStorage(); 
 }
 
 
@@ -75,10 +78,28 @@ function renderShoppingCart() {
     let basketitem = document.getElementById('itemBasket');
     basketitem.innerHTML = '';
     for (let itemKey in shoppingCart) {
+        document.getElementById('basketItemPriceArea').classList.remove('d-none');
         let basketItem = shoppingCart[itemKey];
         basketitem.innerHTML += createItemShoppingCartHtml(basketItem, itemKey); // Transferring itemKey
     }
     shoppingCartPrices();
+}
+
+
+/* items Render orders Dialog shopping cart */
+function renderDialogShoppingCart() {
+    let basketDialogItem = document.getElementById('dialogItemBasket');
+    if (basketDialogItem) {
+        basketDialogItem.innerHTML = '';
+        for (let itemKey in shoppingCart) {
+            document.getElementById('dialogBasketOrderInfo').classList.add('d-none');
+            document.getElementById('dialogPriceBasket').classList.remove('d-none');
+            document.getElementById('dialogBasketItemPriceArea').classList.remove('d-none');
+            let basketItem = shoppingCart[itemKey];
+            basketDialogItem.innerHTML += createItemShoppingCartHtml(basketItem, itemKey);
+        }
+        shoppingCartPricesDialog();
+    }
 }
 
 
@@ -87,6 +108,7 @@ function increaseItem(itemKey) {
     shoppingCart[itemKey].quantity += 1;
     shoppingCart[itemKey].totalPrice += shoppingCart[itemKey].item.price;
     renderShoppingCart();
+    saveToLocalStorage(); 
 }
 
 
@@ -103,6 +125,7 @@ function decreaseItem(itemKey) {
         document.getElementById('priceBasket').classList.add('d-none');
     }
     renderShoppingCart();
+    saveToLocalStorage();
 }
 
 
@@ -112,9 +135,44 @@ function sendOrder() {
     let sentDialog = document.getElementById('sendOrderDialog');
     sentDialog.innerHTML = createDialogOrderHtml();
     clearShoppingCart();
+    clearDialogShoppingCart();
     closeSendDialog();
 }
 
-function openFullscreenBasket(){
-    document.getElementById('dialogBasket').classList.toggle('d-none');
+
+/* open Dialog shopping cart */
+function openFullscreenBasket() {
+    let footer = document.getElementById('footer');
+    let basketDialog = document.getElementById('dialogBasket');
+    if (basketDialog && footer) {
+        basketDialog.classList.toggle('d-none');
+        footer.classList.toggle('d-none');
+        if (!basketDialog.classList.contains('d-none')) {
+            basketDialog.innerHTML = createDialogBasketHtml();
+            renderDialogShoppingCart();
+            shoppingCartPricesDialog();
+        }
+    }
 }
+
+
+function saveToLocalStorage() {
+    localStorage.setItem(`shoppingCart`, JSON.stringify(shoppingCart));
+}
+
+
+function loadFromLocalStorage() {
+    let savedCart = localStorage.getItem('shoppingCart');
+    if (savedCart) {
+        shoppingCart = JSON.parse(savedCart);
+        if (Object.keys(shoppingCart).length > 0) {
+            document.getElementById('priceBasket').classList.remove('d-none');
+            document.getElementById('basketOrderInfo').classList.add('d-none');
+        }
+        renderShoppingCart();
+        shoppingCartPrices();
+    }
+}
+
+
+

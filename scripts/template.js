@@ -1,3 +1,4 @@
+
 function createCategoryHtml(category, categoryIndex) {
     return `
     <div id="category-${category.category}" class="category_order">
@@ -92,7 +93,7 @@ function createPriceShoppingCartHtml() {
         </table>
     </div>
     <div class="basket_order_btn">
-        <button onclick="sendOrder()" type="button" aria-label="Bezahlen">
+        <button onclick="sendOrder('basket')" type="button" aria-label="Bezahlen">
             <span>Bestellen</span>
         </button>
     </div>`;
@@ -112,6 +113,82 @@ function createDialogOrderHtml() {
         </div>
     </div>`
 }
+
+function createDialogBasketHtml() {
+    return `
+    <div class="dialog_basket">
+        <div class="dialog_basket_title">
+            <h2>Warenkorb</h2>
+        </div>
+        <div class="dialog_basket_deliver_pickUp_toggle_area">
+            <div class="dialog_basket_deliver_pickUp">
+                <div id="dialogDeliver" class="dialog_deliver background_white">
+                    <input id="dialogOption_item_0" class="dialog_basket_toggle_input" type="radio" value="deliver">
+                    <label onclick="toggleDeliverPickUpDialog('deliver')" class="dialog_basket_toggle_label"
+                        for="option_item_0">
+                        <span class="dialog_basket_display">
+                            <div class="dialog_basket_display_img"><img src="assets/icons/icons8-bicycle-64.png" alt="">
+                            </div>
+                            <div>
+                                <span>Lieferung</span>
+                                <span>20-45 Min</span>
+                            </div>
+                        </span>
+                    </label>
+                </div>
+                <div id="dialogPickup" class="dialog_pickup">
+                    <input id="dialogOption_item_1" class="dialog_basket_toggle_input" type="radio" value="pickup">
+                    <label onclick="toggleDeliverPickUpDialog('pickup')" class="dialog_basket_toggle_label"
+                        for="option_item_1">
+                        <span class="dialog_basket_display">
+                            <div><img src="assets/icons/icons8-essen-abholen-64.png" alt=""></div>
+                            <div>
+                                <span>Abholung</span>
+                                <span>15 Min</span>
+                            </div>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div id="dialogBasketItemPriceArea" class="dialog_basket_item_price_area d-none">
+            <div id="dialogItemBasket" class="dialog_item_basket"></div>
+        </div>
+        <div id="dialogPriceBasket" class="dialog_price_basket d-none">
+            <div class="basket_price">
+                <table>
+                    <tr>
+                        <td class="subtotal_table_left">Zwischensumme</td>
+                        <td id="dialogSubtotalPrice" class="price_table_right">${subtotalPrice.toFixed(2)} €</td>
+                    </tr>
+                    <tr>
+                        <td class="delivery-costs_table_left">Lieferkosten</td>
+                        <td id="dialogDeliveryCosts" class="price_table_right">${deliveryCosts.toFixed(2)} €</td>
+                    </tr>
+                    <tr>
+                        <td class="total-price_table_left">Gesamt</td>
+                        <td id="dialogTotalPrice" class="end-price_table_right">${totalPrice.toFixed(2)} €</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="basket_order_btn">
+                <button onclick="sendOrder('dialog')" type="button" aria-label="Bezahlen">
+                    <span>Bestellen</span>
+                </button>
+            </div>
+        </div>
+        <div id="dialogBasketOrderInfo" class="dialog_basket_ordering_info">
+            <div class="dialog_basket_info">
+                <img src="assets/icons/icons8-shopping-basket-64.png" alt="">
+                <h2>Fülle deinen Warenkorb</h2>
+                <p>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</p>
+            </div>
+        </div>
+    </div>
+    `;
+}
+
+
 
 
 
