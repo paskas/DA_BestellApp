@@ -42,6 +42,9 @@ function addItemToShoppingCart(categoryIndex, dishesIndex) {
         let itemKey = `${categoryIndex}-${dishesIndex}`;    // Unique key for each item in the shopping cart
         verificationShoppingCart(itemKey, item)
         renderShoppingCart();     // Update shopping cart
+        if (isDialogOpen()) {   // Check if the dialog open
+            renderDialogShoppingCart(); // Update dialog shopping cart
+        }
     }
     saveToLocalStorage();
 }
@@ -53,7 +56,7 @@ function verificationShoppingCart(itemKey, item) {
         shoppingCart[itemKey].quantity += 1;    // Increase quantity
         shoppingCart[itemKey].totalPrice += item.price;     // Increase total price
     } else {
-        addFirstItemToShoppingCart(itemKey, item) // add item for the first time
+        addFirstItemToShoppingCart(itemKey, item)   // add item for the first time
     }
     shoppingCartPrices();
     saveToLocalStorage();
@@ -80,7 +83,7 @@ function renderShoppingCart() {
     for (let itemKey in shoppingCart) {
         document.getElementById('basketItemPriceArea').classList.remove('d-none');
         let basketItem = shoppingCart[itemKey];
-        basketitem.innerHTML += createItemShoppingCartHtml(basketItem, itemKey); // Transferring itemKey
+        basketitem.innerHTML += createItemShoppingCartHtml(basketItem, itemKey);    // Transferring itemKey
     }
     shoppingCartPrices();
 }
@@ -108,6 +111,9 @@ function increaseItem(itemKey) {
     shoppingCart[itemKey].quantity += 1;
     shoppingCart[itemKey].totalPrice += shoppingCart[itemKey].item.price;
     renderShoppingCart();
+    if (isDialogOpen()) {
+        renderDialogShoppingCart();
+    }
     saveToLocalStorage();
 }
 
@@ -118,26 +124,17 @@ function decreaseItem(itemKey) {
         shoppingCart[itemKey].quantity -= 1;
         shoppingCart[itemKey].totalPrice -= shoppingCart[itemKey].item.price;
     } else {
-        delete shoppingCart[itemKey]; // Remove item from the shopping cart when the quantity reaches 1
+        delete shoppingCart[itemKey];   // Remove item from the shopping cart when the quantity reaches 1
     }
-    if (Object.keys(shoppingCart).length === 0) { // check if shoppingCart is empty 
+    if (Object.keys(shoppingCart).length === 0) {   // check if shoppingCart is empty 
         document.getElementById('basketOrderInfo').classList.remove('d-none');
         document.getElementById('priceBasket').classList.add('d-none');
     }
     renderShoppingCart();
+    if (isDialogOpen()) {
+        renderDialogShoppingCart();
+    }
     saveToLocalStorage();
-}
-
-
-/* send order button */
-function sendOrder() {
-    document.getElementById('sendOrderDialog').classList.remove('d-none');
-    let sentDialog = document.getElementById('sendOrderDialog');
-    sentDialog.innerHTML = createDialogOrderHtml();
-    clearShoppingCart();
-    clearDialogShoppingCart();
-    closeSendDialog();
-    saveToLocalStorage()
 }
 
 
@@ -157,6 +154,19 @@ function openFullscreenBasket() {
 }
 
 
+/* send order button */
+function sendOrder() {
+    document.getElementById('sendOrderDialog').classList.remove('d-none');
+    let sentDialog = document.getElementById('sendOrderDialog');
+    sentDialog.innerHTML = createDialogOrderHtml();
+    clearShoppingCart();
+    clearDialogShoppingCart();
+    closeSendDialog();
+    saveToLocalStorage()
+}
+
+
+/* save / load local storage */
 function saveToLocalStorage() {
     localStorage.setItem(`shoppingCart`, JSON.stringify(shoppingCart));
 }

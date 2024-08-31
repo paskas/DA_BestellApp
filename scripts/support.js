@@ -97,10 +97,12 @@ function calculateSubtotal() {
 function clearShoppingCart() {
     document.getElementById('priceBasket').classList.add('d-none');
     document.getElementById('basketOrderInfo').classList.remove('d-none');
+    document.getElementById('dialogBasket').classList.add('d-none');
     shoppingCart = {};
     renderShoppingCart();
     shoppingCartPrices();
 }
+
 
 function clearDialogShoppingCart() {
     resetDialog();
@@ -135,12 +137,17 @@ function clearAndUpdateDialogShoppingCart() {
 
 /* close click event dialog order */
 function closeSendDialog() {
-    const dialog = document.getElementById('sendOrderDialog');
+    let dialog = document.getElementById('sendOrderDialog');
     dialog.addEventListener('click', function (event) {
         if (event.target === dialog) {
             dialog.classList.add('d-none');
         }
     });
+}
+/* function whether the dialog is open */
+function isDialogOpen() {
+    let dialog = document.getElementById('dialogItemBasket');
+    return dialog && !dialog.classList.contains('d-none');
 }
 
 

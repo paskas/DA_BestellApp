@@ -1,4 +1,3 @@
-
 function createCategoryHtml(category, categoryIndex) {
     return `
     <div id="category-${category.category}" class="category_order">
@@ -33,7 +32,8 @@ function createItemHtml(item, categoryIndex, itemsDishesIndex) {
             </div>
         </div>
         <div class="order_plus">
-            <img onclick="addItemToShoppingCart(${categoryIndex},${itemsDishesIndex})" src="assets/icons/icons8-plus-64.png" alt="Plus Icon">
+            <img onclick="addItemToShoppingCart(${categoryIndex},${itemsDishesIndex})" src="assets/icons/icons8-plus-64.png"
+                alt="Plus Icon">
         </div>
     </div>`;
 }
@@ -188,23 +188,3 @@ function createDialogBasketHtml() {
     </div>
     `;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
