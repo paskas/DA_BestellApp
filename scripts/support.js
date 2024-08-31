@@ -50,14 +50,15 @@ function toggleDeliverPickUpDialog(selection) {
 /* updatet price basket */
 function shoppingCartPrices() {
     let subtotal = calculateSubtotal();
-    let totalPrice = subtotal + deliveryCosts;
+    let totalPrices = subtotal + deliveryCosts;
     let deliveryCostsElement = document.getElementById('deliveryCosts');
     let subtotalPriceElement = document.getElementById('subtotalPrice');
     let totalPriceElement = document.getElementById('totalPrice');
+    totalPrice = subtotal + deliveryCosts;
     if (deliveryCostsElement && subtotalPriceElement && totalPriceElement) {
         deliveryCostsElement.innerText = `${deliveryCosts.toFixed(2)} €`;
         subtotalPriceElement.innerText = `${subtotal.toFixed(2)} €`;
-        totalPriceElement.innerText = `${totalPrice.toFixed(2)} €`;
+        totalPriceElement.innerText = `${totalPrices.toFixed(2)} €`;
     }
 }
 
@@ -69,6 +70,7 @@ function shoppingCartPricesDialog() {
     let dialogDeliveryCostsElement = document.getElementById('dialogDeliveryCosts');
     let dialogSubtotalPriceElement = document.getElementById('dialogSubtotalPrice');
     let dialogTotalPriceElement = document.getElementById('dialogTotalPrice');
+    totalPrice = subtotal + deliveryCosts;
     if (dialogDeliveryCostsElement) {
         dialogDeliveryCostsElement.innerText = `${deliveryCosts.toFixed(2)} €`;
     }

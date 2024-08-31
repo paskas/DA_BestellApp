@@ -42,7 +42,7 @@ function createItemHtml(item, categoryIndex, itemsDishesIndex) {
 function createItemShoppingCartHtml(basketItem, itemKey) {
     let item = basketItem.item;
     let quantity = basketItem.quantity;
-    let totalPrice = basketItem.totalPrice.toFixed(2);
+    let totalPrices = basketItem.totalPrice.toFixed(2);
     return `
     <div class="basket_info_area">
         <div class="info_name_price">
@@ -50,7 +50,7 @@ function createItemShoppingCartHtml(basketItem, itemKey) {
                 <span>${item.name}</span>
             </div>
             <div class="info_price">
-                <span>${totalPrice} €</span>
+                <span>${totalPrices} €</span>
             </div>
         </div>
         <div class="info_remark_how-many">
@@ -113,6 +113,7 @@ function createDialogOrderHtml() {
         </div>
     </div>`
 }
+
 
 function createDialogBasketHtml() {
     return `

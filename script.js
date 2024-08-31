@@ -42,8 +42,8 @@ function addItemToShoppingCart(categoryIndex, dishesIndex) {
         let itemKey = `${categoryIndex}-${dishesIndex}`;    // Unique key for each item in the shopping cart
         verificationShoppingCart(itemKey, item)
         renderShoppingCart();     // Update shopping cart
-    } 
-    saveToLocalStorage(); 
+    }
+    saveToLocalStorage();
 }
 
 
@@ -56,7 +56,7 @@ function verificationShoppingCart(itemKey, item) {
         addFirstItemToShoppingCart(itemKey, item) // add item for the first time
     }
     shoppingCartPrices();
-    saveToLocalStorage(); 
+    saveToLocalStorage();
 }
 
 
@@ -108,7 +108,7 @@ function increaseItem(itemKey) {
     shoppingCart[itemKey].quantity += 1;
     shoppingCart[itemKey].totalPrice += shoppingCart[itemKey].item.price;
     renderShoppingCart();
-    saveToLocalStorage(); 
+    saveToLocalStorage();
 }
 
 
@@ -137,6 +137,7 @@ function sendOrder() {
     clearShoppingCart();
     clearDialogShoppingCart();
     closeSendDialog();
+    saveToLocalStorage()
 }
 
 
